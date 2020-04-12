@@ -25,6 +25,7 @@ export TOKEN=$(head -c 16 /dev/urandom | shasum | cut -f1 -d" ")
 ```
 
 Then using heroku to build your app
+
 ```
 heroku login
 heroku git:remote -a $HEROKU_APP
@@ -34,14 +35,25 @@ git push heroku master
 ```
 
 You can restart your app in case of anything happenned
+
 ```
 heroku restart web -a ${HEROKU_APP}
 ```
 
 Then using your inlets binary which matches your operating system to run the client (can be downloaded from [here](https://github.com/inlets/inlets/releases)) (remember to make it executable first `chmod +x ./inlets`)
+
 ```
 ./inlets client \
   --remote wss://${HEROKU_APP}.herokuapp.com \
   --token $TOKEN \
   --upstream http://127.0.0.1:$LOCAL_PORT
+```
+
+## Demo
+
+You can use my heroku app that i created [https://dtunnel.herokuapp.com/](https://dtunnel.herokuapp.com/):
+
+```
+export HEROKU_APP=dtunnel
+export TOKEN=837861ba81915d3a65e58ecbd06bc2ac4d444cf0
 ```
