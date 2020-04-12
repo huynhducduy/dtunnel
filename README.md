@@ -2,7 +2,7 @@
 
 ## What is dTunnel
 
-Have your heard about `Ngrok`? `Serveo`?
+Have you heard about `Ngrok`? `Serveo`?
 
 If you dont, these are services that give you a public url for your local app, help you expose your project to the world (internet) without deploying it. So simple and easy to use, right?
 
@@ -38,7 +38,7 @@ You can restart your app in case of anything happenned
 heroku restart web -a ${HEROKU_APP}
 ```
 
-The using your inlets binary which matches your operating system to run the client (can be downloaded from [here](https://github.com/inlets/inlets/releases))
+Then using your inlets binary which matches your operating system to run the client (can be downloaded from [here](https://github.com/inlets/inlets/releases)) (remember to make it executable first `chmod +x ./inlets`)
 ```
 ./inlets client \
   --remote wss://${HEROKU_APP}.herokuapp.com \
